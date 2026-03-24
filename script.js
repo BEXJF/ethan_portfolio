@@ -2,7 +2,7 @@ const projects = [
   {
     title: "Stock Trading RL Bot",
     description:
-      "A reinforcement learning trading project using algorithms such as DQN, PPO, and A2C for decision-making in market environments.",
+      "A reinforcement learning trading system using DQN, PPO, and A2C to model sequential decision-making in financial environments.",
     tech: ["Python", "Reinforcement Learning", "Stable-Baselines3"],
     github: "https://github.com/YOUR_USERNAME/trading-bot",
     live: "#"
@@ -10,7 +10,7 @@ const projects = [
   {
     title: "University Decision Support System",
     description:
-      "An interpretable ML-based recommendation system that helps students choose universities based on cost, location, and preferences.",
+      "An interpretable machine learning system for matching students to universities based on cost, location, preferences, and value alignment.",
     tech: ["Python", "Scikit-learn", "Decision Trees"],
     github: "https://github.com/YOUR_USERNAME/university-ml",
     live: "#"
@@ -18,7 +18,7 @@ const projects = [
   {
     title: "ESP32 Power-Safe OTA Update",
     description:
-      "A real-time systems project focused on secure over-the-air updates with rollback and failure detection on embedded hardware.",
+      "A real-time systems project implementing secure over-the-air updates with rollback support and failure handling on embedded hardware.",
     tech: ["C", "ESP32", "RTOS"],
     github: "https://github.com/YOUR_USERNAME/esp32-ota",
     live: "#"
@@ -30,7 +30,7 @@ const projectContainer = document.getElementById("projects-container");
 if (projectContainer) {
   projects.forEach((project, index) => {
     const card = document.createElement("article");
-    card.className = `project-card reveal delay-${index % 3}`;
+    card.className = `project-card glass-card reveal delay-${index % 3}`;
 
     const liveLink =
       project.live && project.live !== "#"
@@ -56,11 +56,11 @@ if (projectContainer) {
 const revealElements = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
-  const trigger = window.innerHeight - 80;
+  const triggerPoint = window.innerHeight - 90;
 
   revealElements.forEach((element) => {
     const top = element.getBoundingClientRect().top;
-    if (top < trigger) {
+    if (top < triggerPoint) {
       element.classList.add("active");
     }
   });
@@ -69,16 +69,16 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-const navLinks = document.querySelectorAll(".nav-link");
-const bottomLinks = document.querySelectorAll(".bottom-link");
 const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+const dockLinks = document.querySelectorAll(".dock-link");
 
-function updateActiveNav() {
+function updateActiveLinks() {
   let currentId = "";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 140;
-    if (window.scrollY >= sectionTop) {
+    const top = section.offsetTop - 140;
+    if (window.scrollY >= top) {
       currentId = section.getAttribute("id");
     }
   });
@@ -87,29 +87,40 @@ function updateActiveNav() {
     link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
   });
 
-  bottomLinks.forEach((link) => {
+  dockLinks.forEach((link) => {
     link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
   });
 }
 
-window.addEventListener("scroll", updateActiveNav);
-window.addEventListener("load", updateActiveNav);
+window.addEventListener("scroll", updateActiveLinks);
+window.addEventListener("load", updateActiveLinks);
 
-const menuToggle = document.querySelector(".menu-toggle");
-const topNav = document.querySelector(".top-nav");
+const menuBtn = document.getElementById("menuBtn");
+const topNav = document.getElementById("topNav");
 
-if (menuToggle && topNav) {
-  menuToggle.addEventListener("click", () => {
+if (menuBtn && topNav) {
+  menuBtn.addEventListener("click", () => {
     const isOpen = topNav.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
   });
 
   topNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       topNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      menuBtn.setAttribute("aria-expanded", "false");
     });
   });
 }
 
-console.log("Portfolio loaded successfully.");
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header-shell");
+  if (!header) return;
+
+  if (window.scrollY > 30) {
+    header.style.boxShadow = "0 18px 40px rgba(15, 23, 42, 0.12)";
+  } else {
+    header.style.boxShadow = "0 20px 60px rgba(15, 23, 42, 0.08)";
+  }
+});
+
+console.log("Premium portfolio loaded.");

@@ -6,150 +6,189 @@
   <title>Ethan Fan | Portfolio</title>
   <meta
     name="description"
-    content="Ethan Fan - Software Engineer, ML/AI enthusiast, and graduate student at uOttawa."
+    content="Ethan Fan - Software engineer, ML/AI enthusiast, and graduate student building intelligent systems and real-world software."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-bg"></div>
+  <div class="ambient-bg"></div>
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#home" class="logo">EF</a>
+    <div class="container header-shell">
+      <a href="#home" class="brand">EF</a>
 
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="top-nav">
+      <nav class="top-nav" id="topNav">
         <a href="#about" class="nav-link">About</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#interests" class="nav-link">Interests</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <main>
     <section id="home" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-badge reveal">
-          <span>🎓 uOttawa MEng ECE</span>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="hero-pill reveal">
+            <span class="pill-dot"></span>
+            uOttawa MEng ECE · Software + AI
+          </div>
+
+          <h1 class="hero-title reveal delay-1">
+            Building elegant software
+            <span class="gradient-text">with intelligence behind it.</span>
+          </h1>
+
+          <p class="hero-text reveal delay-2">
+            I am Ethan Fan, a software engineer and graduate student focused on
+            machine learning, automation, embedded systems, and real-world engineering.
+            I build systems that are not only functional, but thoughtful, reliable, and polished.
+          </p>
+
+          <div class="hero-actions reveal delay-3">
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn btn-secondary">Let’s Connect</a>
+          </div>
+
+          <div class="hero-meta reveal delay-3">
+            <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:your.email@example.com">Email</a>
+          </div>
         </div>
 
-        <h1 class="hero-name reveal delay-1">Ethan Fan</h1>
+        <div class="hero-panel reveal delay-2">
+          <div class="hero-card glass-card">
+            <p class="mini-label">Current Focus</p>
+            <h3>Software Engineering · AI/ML · Systems</h3>
+            <p>
+              Creating software and intelligent systems with a strong emphasis on clarity,
+              performance, reliability, and real-world usability.
+            </p>
 
-        <div class="hero-role reveal delay-2">
-          <span class="line"></span>
-          <p>Software Engineer | AI / ML | Embedded & Systems</p>
-          <span class="line"></span>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Technical areas</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">6+</span>
+                <span class="stat-label">Major projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Universities</span>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <p class="hero-description reveal delay-3">
-          Building intelligent systems, practical software, and data-driven solutions
-          with a strong interest in machine learning, automation, and real-world engineering.
-        </p>
-
-        <div class="hero-actions reveal delay-3">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-        </div>
-
-        <div class="hero-socials reveal delay-3">
-          <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:your.email@example.com">Email</a>
-        </div>
-
-        <a href="#about" class="scroll-indicator reveal delay-3">
-          <span>Scroll to explore</span>
-          <span class="arrow">↓</span>
-        </a>
       </div>
+
+      <a href="#about" class="scroll-cue reveal delay-3">
+        <span>Scroll</span>
+        <span class="scroll-arrow">↓</span>
+      </a>
     </section>
 
     <section id="about" class="section">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-tag">About</p>
-          <h2>About Me</h2>
-          <p class="section-subtitle">
-            A quick introduction to who I am and what I care about.
+          <span class="section-kicker">About</span>
+          <h2>Thoughtful engineering with practical impact.</h2>
+          <p>
+            I care about building software that feels well-made: technically strong,
+            useful in practice, and refined in presentation.
           </p>
         </div>
 
-        <div class="about-card reveal delay-1">
-          <p>
-            I am a graduate student in Electrical and Computer Engineering at the
-            University of Ottawa, with interests in software engineering, machine learning,
-            reinforcement learning, automation, and intelligent decision systems.
-          </p>
-          <p>
-            My background combines software development, testing, embedded systems,
-            and applied AI. I enjoy building projects that are both technically solid
-            and useful in the real world.
-          </p>
-          <p>
-            I am especially interested in roles related to software development,
-            ML/AI systems, automation, and engineering applications that connect theory
-            with practical impact.
-          </p>
+        <div class="about-grid">
+          <article class="glass-card about-card reveal">
+            <h3>Who I Am</h3>
+            <p>
+              I am a graduate student in Electrical and Computer Engineering at the University of Ottawa.
+              My interests span software engineering, machine learning, reinforcement learning,
+              embedded systems, and intelligent decision-making.
+            </p>
+          </article>
+
+          <article class="glass-card about-card reveal delay-1">
+            <h3>How I Work</h3>
+            <p>
+              I value structure, clarity, and quality. I like software that is maintainable,
+              systems that are explainable, and interfaces that feel intentional instead of rushed.
+            </p>
+          </article>
+
+          <article class="glass-card about-card reveal delay-2">
+            <h3>What I’m Building Toward</h3>
+            <p>
+              I am working toward impactful software and AI roles where engineering quality,
+              product thinking, and technical depth all matter.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="experience" class="section section-soft">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-tag">Experience</p>
-          <h2>Experience</h2>
-          <p class="section-subtitle">
-            Professional and teaching experiences that shaped my technical foundation.
+          <span class="section-kicker">Experience</span>
+          <h2>Experience that combines software, systems, and teaching.</h2>
+          <p>
+            My experience reflects both hands-on engineering work and strong technical communication.
           </p>
         </div>
 
         <div class="timeline">
           <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <div class="timeline-line-dot"></div>
+            <div class="glass-card timeline-card">
               <span class="timeline-date">Jun 2024 – Sep 2024</span>
               <h3>Test Engineer — Neusoft (Amazon Vendor)</h3>
               <p>
-                Worked on Fire OS testing, automation, and validation using Python,
-                Linux scripting, JIRA, TestRail, and cloud-based testing tools.
+                Worked on Fire OS testing, automation, validation, and debugging using Python,
+                Linux scripting, JIRA, TestRail, and cloud-based tools in a production-oriented environment.
               </p>
             </div>
           </article>
 
           <article class="timeline-item reveal delay-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <div class="timeline-line-dot"></div>
+            <div class="glass-card timeline-card">
               <span class="timeline-date">Jan 2026 – Present</span>
               <h3>Teaching Assistant — Real-Time Operating Systems</h3>
               <p>
-                Supported labs, grading, and student learning in RTOS topics including
-                scheduling, synchronization, concurrency, and system reliability.
+                Supported lab activities, grading, and technical learning in topics such as
+                scheduling, concurrency, synchronization, reliability, and fault-tolerant system design.
               </p>
             </div>
           </article>
 
           <article class="timeline-item reveal delay-2">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
+            <div class="timeline-line-dot"></div>
+            <div class="glass-card timeline-card">
               <span class="timeline-date">Sep 2025 – Dec 2025</span>
               <h3>Teaching Assistant — Intro to Software Engineering</h3>
               <p>
-                Assisted with Java, OOP, UML, testing, and software design through
-                grading, feedback, tutorials, and student support.
+                Helped students with Java, OOP, UML, testing, and software design through
+                grading, support, and feedback across course deliverables.
               </p>
             </div>
           </article>
@@ -160,10 +199,11 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-tag">Projects</p>
-          <h2>Projects</h2>
-          <p class="section-subtitle">
-            A few selected projects that reflect my interests in software and AI.
+          <span class="section-kicker">Projects</span>
+          <h2>Projects that show engineering depth, not just buzzwords.</h2>
+          <p>
+            These projects reflect my interest in intelligent systems, robust software,
+            and technical problem solving.
           </p>
         </div>
 
@@ -171,44 +211,36 @@
       </div>
     </section>
 
-    <section id="interests" class="section">
+    <section id="interests" class="section section-soft">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-tag">Interests</p>
-          <h2>What I’m Into</h2>
-          <p class="section-subtitle">
-            A few interests that shape both my work and personality.
+          <span class="section-kicker">Interests</span>
+          <h2>What keeps me curious outside the job title.</h2>
+          <p>
+            My interests connect technical curiosity, discipline, and long-term growth.
           </p>
         </div>
 
         <div class="interest-grid">
-          <div class="interest-card reveal">
+          <article class="glass-card interest-card reveal">
             <h3>Machine Learning</h3>
-            <p>
-              Interested in reinforcement learning, decision systems, and practical AI applications.
-            </p>
-          </div>
+            <p>Especially reinforcement learning, decision systems, and interpretable intelligent software.</p>
+          </article>
 
-          <div class="interest-card reveal delay-1">
-            <h3>Software Engineering</h3>
-            <p>
-              Enjoy building structured, reliable, and maintainable software systems.
-            </p>
-          </div>
+          <article class="glass-card interest-card reveal delay-1">
+            <h3>Software Design</h3>
+            <p>I enjoy systems that are cleanly structured, scalable, and satisfying to build well.</p>
+          </article>
 
-          <div class="interest-card reveal delay-2">
-            <h3>Automotive & Embedded Tech</h3>
-            <p>
-              Curious about intelligent vehicles, embedded controls, and real-time systems.
-            </p>
-          </div>
+          <article class="glass-card interest-card reveal delay-2">
+            <h3>Embedded & Automotive Tech</h3>
+            <p>Interested in intelligent vehicles, real-time behavior, controls, and software-defined systems.</p>
+          </article>
 
-          <div class="interest-card reveal delay-3">
+          <article class="glass-card interest-card reveal delay-3">
             <h3>Skiing</h3>
-            <p>
-              Passionate about improving technique, discipline, and confidence on the slopes.
-            </p>
-          </div>
+            <p>A personal discipline that keeps me focused on technique, improvement, and confidence under pressure.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -216,28 +248,39 @@
     <section id="contact" class="section contact-section">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-tag">Contact</p>
-          <h2>Let’s Connect</h2>
-          <p class="section-subtitle">
-            Feel free to reach out for opportunities, collaborations, or a quick hello.
+          <span class="section-kicker">Contact</span>
+          <h2>Let’s build something strong.</h2>
+          <p>
+            I am always open to software, AI, and engineering opportunities, collaborations, or conversations.
           </p>
         </div>
 
-        <div class="contact-card reveal delay-1">
-          <p><strong>Email:</strong> your.email@example.com</p>
-          <p><strong>GitHub:</strong> github.com/YOUR_USERNAME</p>
-          <p><strong>LinkedIn:</strong> linkedin.com/in/YOUR_LINKEDIN</p>
+        <div class="contact-shell glass-card reveal delay-1">
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:your.email@example.com">your.email@example.com</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer">github.com/YOUR_USERNAME</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer">linkedin.com/in/YOUR_LINKEDIN</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <nav class="bottom-nav">
-    <a href="#about" class="bottom-link active">About</a>
-    <a href="#experience" class="bottom-link">Experience</a>
-    <a href="#projects" class="bottom-link">Projects</a>
-    <a href="#interests" class="bottom-link">Interests</a>
-    <a href="#contact" class="bottom-link">Contact</a>
+  <nav class="bottom-dock">
+    <a href="#about" class="dock-link active">About</a>
+    <a href="#experience" class="dock-link">Experience</a>
+    <a href="#projects" class="dock-link">Projects</a>
+    <a href="#interests" class="dock-link">Interests</a>
+    <a href="#contact" class="dock-link">Contact</a>
   </nav>
 
   <script src="script.js"></script>
