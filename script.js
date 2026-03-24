@@ -1,112 +1,27 @@
-// ===============================
-// Smooth Scroll
-// ===============================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  });
-});
-
-
-// ===============================
-// Reveal on Scroll Animation
-// ===============================
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-
-  reveals.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-
-// Run once on load
-revealOnScroll();
-
-
-// ===============================
-// Active Navbar Highlight
-// ===============================
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-function highlightNav() {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
-
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", highlightNav);
-
-
-// ===============================
-// Sticky Header Shadow
-// ===============================
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.4)";
-  } else {
-    header.style.boxShadow = "none";
-  }
-});
-
-
-// ===============================
-// Dynamic Projects Section
-// ===============================
 const projects = [
   {
     title: "Stock Trading RL Bot",
-    description: "Built a reinforcement learning trading agent using DQN, PPO, and A2C with Stable-Baselines3.",
-    tech: ["Python", "RL", "PyTorch"],
+    description:
+      "A reinforcement learning trading project using algorithms such as DQN, PPO, and A2C for decision-making in market environments.",
+    tech: ["Python", "Reinforcement Learning", "Stable-Baselines3"],
     github: "https://github.com/YOUR_USERNAME/trading-bot",
-    demo: "#"
+    live: "#"
   },
   {
-    title: "University Decision ML System",
-    description: "Decision-support system using Decision Trees and Random Forest for university selection.",
-    tech: ["Python", "Scikit-learn", "Data Analysis"],
+    title: "University Decision Support System",
+    description:
+      "An interpretable ML-based recommendation system that helps students choose universities based on cost, location, and preferences.",
+    tech: ["Python", "Scikit-learn", "Decision Trees"],
     github: "https://github.com/YOUR_USERNAME/university-ml",
-    demo: "#"
+    live: "#"
   },
   {
-    title: "Real-Time OS Project (ESP32 OTA)",
-    description: "Implemented secure OTA update system with rollback and failure detection on ESP32.",
-    tech: ["C", "RTOS", "Embedded"],
+    title: "ESP32 Power-Safe OTA Update",
+    description:
+      "A real-time systems project focused on secure over-the-air updates with rollback and failure detection on embedded hardware.",
+    tech: ["C", "ESP32", "RTOS"],
     github: "https://github.com/YOUR_USERNAME/esp32-ota",
-    demo: "#"
+    live: "#"
   }
 ];
 
@@ -114,20 +29,23 @@ const projectContainer = document.getElementById("projects-container");
 
 if (projectContainer) {
   projects.forEach((project, index) => {
-    const card = document.createElement("div");
+    const card = document.createElement("article");
     card.className = `project-card reveal delay-${index % 3}`;
+
+    const liveLink =
+      project.live && project.live !== "#"
+        ? `<a href="${project.live}" target="_blank" rel="noreferrer">Live Demo</a>`
+        : "";
 
     card.innerHTML = `
       <h3>${project.title}</h3>
       <p>${project.description}</p>
-
       <div class="tech-stack">
-        ${project.tech.map(t => `<span>${t}</span>`).join("")}
+        ${project.tech.map((item) => `<span>${item}</span>`).join("")}
       </div>
-
       <div class="project-links">
-        <a href="${project.github}" target="_blank">GitHub</a>
-        ${project.demo !== "#" ? `<a href="${project.demo}" target="_blank">Live</a>` : ""}
+        <a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>
+        ${liveLink}
       </div>
     `;
 
@@ -135,8 +53,63 @@ if (projectContainer) {
   });
 }
 
+const revealElements = document.querySelectorAll(".reveal");
 
-// ===============================
-// Console Signature (optional cool touch)
-// ===============================
-console.log("%cWelcome to Ethan's Portfolio 🚀", "color: #38bdf8; font-size: 16px; font-weight: bold;");
+function revealOnScroll() {
+  const trigger = window.innerHeight - 80;
+
+  revealElements.forEach((element) => {
+    const top = element.getBoundingClientRect().top;
+    if (top < trigger) {
+      element.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+const navLinks = document.querySelectorAll(".nav-link");
+const bottomLinks = document.querySelectorAll(".bottom-link");
+const sections = document.querySelectorAll("section[id]");
+
+function updateActiveNav() {
+  let currentId = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 140;
+    if (window.scrollY >= sectionTop) {
+      currentId = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
+  });
+
+  bottomLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("load", updateActiveNav);
+
+const menuToggle = document.querySelector(".menu-toggle");
+const topNav = document.querySelector(".top-nav");
+
+if (menuToggle && topNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = topNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  topNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      topNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+console.log("Portfolio loaded successfully.");
