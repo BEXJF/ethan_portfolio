@@ -1,126 +1,110 @@
-const projects = [
-  {
-    title: "Stock Trading RL Bot",
-    description:
-      "A reinforcement learning trading system using DQN, PPO, and A2C to model sequential decision-making in financial environments.",
-    tech: ["Python", "Reinforcement Learning", "Stable-Baselines3"],
-    github: "https://github.com/YOUR_USERNAME/trading-bot",
-    live: "#"
-  },
-  {
-    title: "University Decision Support System",
-    description:
-      "An interpretable machine learning system for matching students to universities based on cost, location, preferences, and value alignment.",
-    tech: ["Python", "Scikit-learn", "Decision Trees"],
-    github: "https://github.com/YOUR_USERNAME/university-ml",
-    live: "#"
-  },
-  {
-    title: "ESP32 Power-Safe OTA Update",
-    description:
-      "A real-time systems project implementing secure over-the-air updates with rollback support and failure handling on embedded hardware.",
-    tech: ["C", "ESP32", "RTOS"],
-    github: "https://github.com/YOUR_USERNAME/esp32-ota",
-    live: "#"
-  }
-];
-
-const projectContainer = document.getElementById("projects-container");
-
-if (projectContainer) {
-  projects.forEach((project, index) => {
-    const card = document.createElement("article");
-    card.className = `project-card glass-card reveal delay-${index % 3}`;
-
-    const liveLink =
-      project.live && project.live !== "#"
-        ? `<a href="${project.live}" target="_blank" rel="noreferrer">Live Demo</a>`
-        : "";
-
-    card.innerHTML = `
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <div class="tech-stack">
-        ${project.tech.map((item) => `<span>${item}</span>`).join("")}
-      </div>
-      <div class="project-links">
-        <a href="${project.github}" target="_blank" rel="noreferrer">GitHub</a>
-        ${liveLink}
-      </div>
-    `;
-
-    projectContainer.appendChild(card);
-  });
-}
-
+const navbar = document.getElementById("navbar");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const backToTop = document.getElementById("backToTop");
 const revealElements = document.querySelectorAll(".reveal");
+const tiltCards = document.querySelectorAll(".tilt-card");
 
-function revealOnScroll() {
-  const triggerPoint = window.innerHeight - 90;
-
-  revealElements.forEach((element) => {
-    const top = element.getBoundingClientRect().top;
-    if (top < triggerPoint) {
-      element.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
-const dockLinks = document.querySelectorAll(".dock-link");
-
-function updateActiveLinks() {
-  let currentId = "";
-
-  sections.forEach((section) => {
-    const top = section.offsetTop - 140;
-    if (window.scrollY >= top) {
-      currentId = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
-  });
-
-  dockLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
-  });
-}
-
-window.addEventListener("scroll", updateActiveLinks);
-window.addEventListener("load", updateActiveLinks);
-
-const menuBtn = document.getElementById("menuBtn");
-const topNav = document.getElementById("topNav");
-
-if (menuBtn && topNav) {
-  menuBtn.addEventListener("click", () => {
-    const isOpen = topNav.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  topNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      topNav.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-
+// navbar scroll effect
 window.addEventListener("scroll", () => {
-  const header = document.querySelector(".header-shell");
-  if (!header) return;
-
-  if (window.scrollY > 30) {
-    header.style.boxShadow = "0 18px 40px rgba(15, 23, 42, 0.12)";
+  if (window.scrollY > 20) {
+    navbar.classList.add("scrolled");
   } else {
-    header.style.boxShadow = "0 20px 60px rgba(15, 23, 42, 0.08)";
+    navbar.classList.remove("scrolled");
+  }
+
+  if (window.scrollY > 500) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
   }
 });
 
-console.log("Premium portfolio loaded.");
+// mobile menu
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+  });
+});
+
+// reveal on scroll
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("active");
+        }, index * 80);
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// back to top
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+// subtle tilt effect
+tiltCards.forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -6;
+    const rotateY = ((x - centerX) / centerX) * 6;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+  });
+});
+
+// active nav highlight on scroll
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 140;
+    const sectionHeight = section.offsetHeight;
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.style.color = "";
+    if (link.getAttribute("href") === `#${current}`) {
+      link.style.color = "#121826";
+      link.style.fontWeight = "700";
+    } else {
+      link.style.fontWeight = "500";
+    }
+  });
+});
+
+// hero text entrance
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
