@@ -1,148 +1,142 @@
-const projects = [
-  {
-    icon: "🧠",
-    title: "Neural Network Implementation & Performance Analysis",
-    description:
-      "Built a feedforward neural network in pure JAX using grad and jit, trained it on MNIST with remote HPC, and compared performance against an equivalent PyTorch implementation.",
-    tech: ["JAX", "PyTorch", "MNIST", "HPC"],
-    github: "https://github.com/yourusername/project1",
-    demo: "#"
-  },
-  {
-    icon: "📈",
-    title: "Reinforcement Learning Stock Trading Agent",
-    description:
-      "Developed a buy/sell/hold trading agent using A2C, A3C, DQN, and PPO in the AnyTrading environment, and explored exploration strategies including epsilon-greedy and Boltzmann methods.",
-    tech: ["Python", "RL", "DQN", "PPO", "AnyTrading"],
-    github: "https://github.com/yourusername/project2",
-    demo: "#"
-  },
-  {
-    icon: "⚡",
-    title: "Simulated Automated External Defibrillator in C++",
-    description:
-      "Designed and implemented an AED software simulation in C++ and Qt on Linux, covering self-test, rhythm analysis, shock delivery, monitoring, traceability, and multi-level testing.",
-    tech: ["C++", "Qt", "Linux", "SDLC", "Testing"],
-    github: "https://github.com/yourusername/project3",
-    demo: "#"
-  },
-  {
-    icon: "📱",
-    title: "Fire OS Testing and Automation Work",
-    description:
-      "Contributed to OTA, FSST, and MSQ testing, Android system validation, automation workflows, and debugging for unreleased Fire OS features during industry testing work.",
-    tech: ["Python", "Linux", "JIRA", "TestRail", "AWS"],
-    github: "https://github.com/yourusername/project4",
-    demo: "#"
-  },
-  {
-    icon: "🧪",
-    title: "Software Testing & Systems Validation",
-    description:
-      "Worked on system-level testing, low-level debugging, test case development, and technical reporting for reliable software delivery in practical engineering settings.",
-    tech: ["System Testing", "Automation", "Debugging", "QA"],
-    github: "https://github.com/yourusername/project5",
-    demo: "#"
-  },
-  {
-    icon: "💻",
-    title: "Personal Portfolio Website",
-    description:
-      "Designed and deployed a modern personal portfolio site with GitHub Pages to showcase projects, technical background, and software engineering interests.",
-    tech: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-    github: "https://github.com/yourusername/ethan_portfolio",
-    demo: "#home"
-  }
-];
+// ===============================
+// Smooth Scroll
+// ===============================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
 
-const projectList = document.getElementById("project-list");
-const navLinks = document.querySelectorAll(".nav-link");
-const sections = document.querySelectorAll("main section");
-const menuToggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav");
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
+});
 
-function renderProjects() {
-  if (!projectList) return;
 
-  projectList.innerHTML = "";
+// ===============================
+// Reveal on Scroll Animation
+// ===============================
+const reveals = document.querySelectorAll(".reveal");
 
-  projects.forEach((project) => {
-    const card = document.createElement("article");
-    card.className = "project-card reveal";
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
 
-    card.innerHTML = `
-      <div class="project-top">
-        <div class="project-icon">${project.icon}</div>
-      </div>
-      <h3 class="project-title">${project.title}</h3>
-      <p class="project-description">${project.description}</p>
-      <div class="tech-list">
-        ${project.tech.map((item) => `<span class="tech-badge">${item}</span>`).join("")}
-      </div>
-      <div class="project-links">
-        <a href="${project.github}" target="_blank">GitHub ↗</a>
-        <a href="${project.demo}" target="_blank">More ↗</a>
-      </div>
-    `;
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
 
-    projectList.appendChild(card);
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
   });
 }
 
-function revealOnScroll() {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+window.addEventListener("scroll", revealOnScroll);
 
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-}
+// Run once on load
+revealOnScroll();
 
-function updateActiveNav() {
+
+// ===============================
+// Active Navbar Highlight
+// ===============================
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function highlightNav() {
   let current = "";
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 130;
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.offsetHeight;
 
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+    if (pageYOffset >= sectionTop) {
       current = section.getAttribute("id");
     }
   });
 
-  navLinks.forEach((link) => {
+  navLinks.forEach(link => {
     link.classList.remove("active");
-    const href = link.getAttribute("href");
-    if (href === `#${current}`) {
+
+    if (link.getAttribute("href") === "#" + current) {
       link.classList.add("active");
     }
   });
 }
 
-function setupMobileMenu() {
-  if (!menuToggle || !nav) return;
+window.addEventListener("scroll", highlightNav);
 
-  menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-    });
+// ===============================
+// Sticky Header Shadow
+// ===============================
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.4)";
+  } else {
+    header.style.boxShadow = "none";
+  }
+});
+
+
+// ===============================
+// Dynamic Projects Section
+// ===============================
+const projects = [
+  {
+    title: "Stock Trading RL Bot",
+    description: "Built a reinforcement learning trading agent using DQN, PPO, and A2C with Stable-Baselines3.",
+    tech: ["Python", "RL", "PyTorch"],
+    github: "https://github.com/YOUR_USERNAME/trading-bot",
+    demo: "#"
+  },
+  {
+    title: "University Decision ML System",
+    description: "Decision-support system using Decision Trees and Random Forest for university selection.",
+    tech: ["Python", "Scikit-learn", "Data Analysis"],
+    github: "https://github.com/YOUR_USERNAME/university-ml",
+    demo: "#"
+  },
+  {
+    title: "Real-Time OS Project (ESP32 OTA)",
+    description: "Implemented secure OTA update system with rollback and failure detection on ESP32.",
+    tech: ["C", "RTOS", "Embedded"],
+    github: "https://github.com/YOUR_USERNAME/esp32-ota",
+    demo: "#"
+  }
+];
+
+const projectContainer = document.getElementById("projects-container");
+
+if (projectContainer) {
+  projects.forEach((project, index) => {
+    const card = document.createElement("div");
+    card.className = `project-card reveal delay-${index % 3}`;
+
+    card.innerHTML = `
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+
+      <div class="tech-stack">
+        ${project.tech.map(t => `<span>${t}</span>`).join("")}
+      </div>
+
+      <div class="project-links">
+        <a href="${project.github}" target="_blank">GitHub</a>
+        ${project.demo !== "#" ? `<a href="${project.demo}" target="_blank">Live</a>` : ""}
+      </div>
+    `;
+
+    projectContainer.appendChild(card);
   });
 }
 
-renderProjects();
-revealOnScroll();
-setupMobileMenu();
-updateActiveNav();
 
-window.addEventListener("scroll", updateActiveNav);
-window.addEventListener("load", updateActiveNav);
+// ===============================
+// Console Signature (optional cool touch)
+// ===============================
+console.log("%cWelcome to Ethan's Portfolio 🚀", "color: #38bdf8; font-size: 16px; font-weight: bold;");

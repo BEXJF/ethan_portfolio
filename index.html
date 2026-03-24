@@ -1,313 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PE1SQ810T5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PE1SQ810T5');
-</script>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline';">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan Xujia Fan | Portfolio</title>
-  <meta
-    name="description"
-    content="Ethan Xujia Fan - Software Engineering, Testing, AI, Machine Learning, and Research Portfolio"
-  />
+  <title>Ethan Fan | Portfolio</title>
+  <meta name="description" content="Portfolio of Ethan Fan - software engineering, machine learning, and AI systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-blur bg-blur-1"></div>
-  <div class="bg-blur bg-blur-2"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
 
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="#home" class="logo">Ethan Fan</a>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">Ethan Fan</a>
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-        ☰
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
-      <nav class="nav" id="nav">
+      <nav class="site-nav" id="site-nav">
         <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#interests" class="nav-link">Interests</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="#beyond coding" class="nav-link">Teaching</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero section" id="home">
+    <section class="hero section-first">
       <div class="container hero-grid">
-        <div class="hero-text reveal">
-          <p class="eyebrow">Software Engineering • Testing • AI • Machine Learning</p>
-          <h1>
-            Building reliable software systems,
-            intelligent tools, and practical ML solutions at the intersection of
-            <span class="gradient-text">engineering and AI</span>.
-          </h1>
-          <p class="hero-description">
-            I am Ethan Xujia Fan, a Master of Engineering student in Electrical and
-            Computer Engineering at the University of Ottawa with a Computer Science
-            background from Carleton University. I work across software development,
-            software testing, automation, and machine learning.
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Software Engineer · Machine Learning · AI Systems</p>
+          <h1>Building reliable software and practical intelligent systems.</h1>
+          <p class="hero-text">
+            I am Ethan Fan, a graduate student in Electrical and Computer Engineering with experience in software testing,
+            machine learning, reinforcement learning, and systems-focused development.
           </p>
 
-          <div class="hero-buttons">
+          <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">View Projects</a>
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            <a href="Ethan_Xujia_Fan_Resume_Dev.pdf" class="btn btn-outline" target="_blank">Resume</a>
           </div>
 
-          
-        </div>
-
-        <div class="hero-card reveal delay-1">
-          <div class="hero-card-inner">
-            <p class="card-label">Current Focus</p>
-            <h3>Software + AI Portfolio</h3>
-            <p>
-              I am building a portfolio focused on software engineering, testing,
-              embedded and systems work, and applied machine learning.
-            </p>
-
-            <div class="mini-stats">
-              <div class="mini-stat">
-                <span class="stat-number">MEng</span>
-                <span class="stat-label">uOttawa ECE, co-op</span>
-              </div>
-              <div class="mini-stat">
-                <span class="stat-number">SDE / QA</span>
-                <span class="stat-label">Development, testing, automation</span>
-              </div>
-              <div class="mini-stat">
-                <span class="stat-number">AI</span>
-                <span class="stat-label">DL, RL, model evaluation</span>
-              </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>ML + Software</strong>
+              <span>Applied projects across AI, automation, and systems</span>
+            </div>
+            <div class="stat-card">
+              <strong>Teaching</strong>
+              <span>Experience supporting OS and software engineering courses</span>
             </div>
           </div>
         </div>
+
+        <aside class="hero-panel reveal delay-1">
+          <div class="profile-card glass">
+            <div class="profile-top">
+              <div class="avatar">EF</div>
+              <div>
+                <h2>Ethan Fan</h2>
+                <p>Ottawa, Canada</p>
+              </div>
+            </div>
+
+            <ul class="profile-list">
+              <li><span>Focus</span><strong>Software Engineering & ML</strong></li>
+              <li><span>Education</span><strong>MEng, uOttawa</strong></li>
+              <li><span>Background</span><strong>Computer Science</strong></li>
+              <li><span>Strengths</span><strong>Python, C++, Testing, AI</strong></li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container">
+    <section id="about" class="section">
+      <div class="container two-col">
         <div class="section-heading reveal">
           <p class="section-tag">About</p>
-          <h2>Ethan Xujia Fan</h2>
-          <p>
-            I am a graduate student with experience in software development,
-            software testing, and machine learning. My work spans scalable systems,
-            system-level testing, automation, and ML model development.
-          </p>
+          <h2>About Me</h2>
         </div>
 
-        <div class="about-grid">
-          <div class="glass-card reveal">
-            <h3>Education</h3>
-            <p>
-              <strong>University of Ottawa</strong><br />
-              Master of Electrical and Computer Engineering, co-op<br />
-              Jan. 2026 – Dec. 2027
-            </p>
-            <p style="margin-top: 14px;">
-              <strong>Carleton University</strong><br />
-              Honours Bachelor of Computer Science<br />
-              Sept. 2020 – Aug. 2025
-            </p>
-          </div>
-
-          <div class="glass-card reveal delay-1">
-            <h3>Relevant Coursework</h3>
-            <ul class="clean-list">
-              <li>Graduate courses:</li>
-              <li>Deep Learning and Reinforcement Learning</li>
-              <li>Uncertainty Evaluation in Machine Learning</li>
-              <li>Engineering Ethics</li>
-              <li>Graduate TA training</li>
-            </ul>
-          </div>
-
-          <div class="glass-card reveal delay-2">
-            <h3>What I Bring</h3>
-            <ul class="clean-list">
-              <li>Hands-on software testing and automation experience</li>
-              <li>Solid understanding of Deep Learning and Reinforcement Learning</li>
-              <li>Strong Python, Java, C, and C++ foundation</li>
-              <li>TA experience in software engineering and systems courses</li>
-              <li>Strong communication across technical and team settings</li>
-            </ul>
-          </div>
+        <div class="section-body reveal delay-1">
+          <p>
+            I enjoy building software that is both technically solid and useful in the real world. My work sits at the intersection
+            of software engineering, machine learning, and system reliability.
+          </p>
+          <p>
+            I have worked on testing and automation, reinforcement learning projects, and academic support roles where clear explanation,
+            structured thinking, and attention to detail matter.
+          </p>
+          <p>
+            I am especially interested in intelligent systems, data-driven decision making, and production-quality software development.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="section-tag">Projects</p>
-          <h2>Featured Work</h2>
-          <p>
-            Selected work across machine learning, reinforcement learning, embedded systems,
-            and performance analysis.
-          </p>
-        </div>
-
-        <div class="projects-grid" id="project-list"></div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="section-tag">Skills</p>
-          <h2>Technical Stack</h2>
-          <p>
-            Tools and technologies I use across software engineering, QA, AI, and systems work.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          <div class="glass-card reveal">
-            <h3>Programming</h3>
-            <div class="pill-group">
-              <span class="pill">Java</span>
-              <span class="pill">Python</span>
-              <span class="pill">C</span>
-              <span class="pill">C++</span>
-              <span class="pill">SQL</span>
-            </div>
-          </div>
-
-          <div class="glass-card reveal delay-1">
-            <h3>Platforms & Systems</h3>
-            <div class="pill-group">
-              <span class="pill">Linux</span>
-              <span class="pill">Shell</span>
-              <span class="pill">Colab</span>
-              <span class="pill">QNX RTOS</span>
-              <span class="pill">Momentics IDE</span>
-            </div>
-          </div>
-
-          <div class="glass-card reveal delay-2">
-            <h3>Engineering & AI</h3>
-            <div class="pill-group">
-              <span class="pill">Git</span>
-              <span class="pill">JIRA</span>
-              <span class="pill">TestRail</span>
-              <span class="pill">Agile / Scrum / SDLC</span>
-              <span class="pill">DL</span>
-              <span class="pill">RL</span>
-              <span class="pill">Model Evaluation</span>
-              <span class="pill">Data Science</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="section" id="internExperience">
+    <section id="experience" class="section">
       <div class="container">
         <div class="section-heading reveal">
           <p class="section-tag">Experience</p>
-          <h2>Work Experience</h2>
-          <p>
-            Intern experience
-          </p>
+          <h2>Work & Teaching Experience</h2>
+          <p>A few highlights from internships and teaching assistant roles.</p>
         </div>
 
-        <div class="timeline-item reveal delay">
+        <div class="timeline">
+          <article class="timeline-item reveal">
             <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">Jun. 2024 – Sept. 2024</span>
-              <h3>Test Engineer — Neusoft (Amazon Vendor)</h3>
+            <div class="timeline-card glass">
+              <span class="timeline-date">Jun 2024 – Sep 2024</span>
+              <h3>Test Engineer · Neusoft (Amazon Vendor)</h3>
               <p>
-                Worked on Fire OS device testing with OTA, FSST, and MSQ coverage using Python,
-                Linux scripts, JIRA, TestRail, and AWS tools. Also contributed to automation testing,
-                Android system debugging, and cross-functional technical presentations.
+                Worked on Fire OS device testing with Python, Linux, OTA workflows, automation tools, defect investigation,
+                and cross-functional technical collaboration.
               </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass">
+              <span class="timeline-date">Jan 2026 – Present</span>
+              <h3>Teaching Assistant · Real-Time Operating Systems</h3>
+              <p>
+                Supported labs, grading, and student guidance on scheduling, synchronization, concurrency, reliability,
+                and fault-tolerant system design.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass">
+              <span class="timeline-date">Sep 2025 – Dec 2025</span>
+              <h3>Teaching Assistant · Intro to Software Engineering</h3>
+              <p>
+                Helped students with Java, object-oriented design, UML, software testing, project structure, and technical feedback.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-tag">Projects</p>
+          <h2>Selected Projects</h2>
+          <p>Projects are loaded from JavaScript so they are easy to edit later.</p>
+        </div>
+
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-tag">Skills</p>
+          <h2>Technical Skills</h2>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skill-group glass reveal">
+            <h3>Languages</h3>
+            <div class="chip-wrap">
+              <span class="chip">Python</span>
+              <span class="chip">C++</span>
+              <span class="chip">Java</span>
+              <span class="chip">SQL</span>
+              <span class="chip">HTML/CSS/JS</span>
+            </div>
+          </div>
+
+          <div class="skill-group glass reveal delay-1">
+            <h3>Machine Learning</h3>
+            <div class="chip-wrap">
+              <span class="chip">PyTorch</span>
+              <span class="chip">JAX</span>
+              <span class="chip">scikit-learn</span>
+              <span class="chip">Reinforcement Learning</span>
+              <span class="chip">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="skill-group glass reveal delay-2">
+            <h3>Tools & Systems</h3>
+            <div class="chip-wrap">
+              <span class="chip">Git/GitHub</span>
+              <span class="chip">Linux</span>
+              <span class="chip">JIRA</span>
+              <span class="chip">TestRail</span>
+              <span class="chip">Automation Testing</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Jan. 2026 – Now</span>
-            <h3>Teaching Assistant — CEG4166 Real-Time Operating System</h3>
-            <p>
-              Supported labs, grading, and feedback in RTOS.
-              Topics included concurrency, scheduling, synchronization, reliability, and fault-tolerant architecture.
-            </p>
+    <section id="interests" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-tag">Interests</p>
+          <h2>Beyond Coursework</h2>
+        </div>
+
+        <div class="interests-grid">
+          <div class="interest-card glass reveal">
+            <h3>Skiing</h3>
+            <p>Passionate about improving technique and pushing toward stronger carving and race-style control.</p>
           </div>
-        </div>
-
-    <div class="timeline-item reveal delay-1">
-      <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-date">Sept. 2025 – Dec. 2025</span>
-          <h3>Teaching Assistant — SEG2105 Intro to Software Engineering</h3>
-          <p>
-            Supported Java, OOP, UML, Android, SQLite, and software testing content through
-            grading, feedback, office hours, and coordination with the instructional team.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal delay-2">
-        <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">May 2021 – Jul. 2021, May 2023 – Jul. 2023</span>
-            <h3>Teaching Assistant — COMP 1805 Discrete Structures I</h3>
-            <p>
-              Held office hours and graded 600+ assignments and exams while supporting logic,
-              set theory, proofs, algorithm complexity, and graph theory topics.
-            </p>
+          <div class="interest-card glass reveal delay-1">
+            <h3>Machine Learning</h3>
+            <p>Interested in reinforcement learning, intelligent systems, and practical decision-support applications.</p>
+          </div>
+          <div class="interest-card glass reveal delay-2">
+            <h3>Automotive Technology</h3>
+            <p>Drawn to embedded systems, software-defined vehicles, and reliability in real-world engineering.</p>
+          </div>
+          <div class="interest-card glass reveal delay-3">
+            <h3>Entrepreneurship</h3>
+            <p>Motivated by building useful products, turning ideas into systems, and solving real problems with tech.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-panel reveal">
-          <div>
-            <p class="section-tag">Contact</p>
-            <h2>Let’s Connect</h2>
-            <p>
-              I am interested in software engineering, testing, automation,
-              machine learning, and technical internship or co-op opportunities.
-            </p>
-          </div>
+    <section id="contact" class="section">
+      <div class="container contact-panel glass reveal">
+        <div>
+          <p class="section-tag">Contact</p>
+          <h2>Let’s connect</h2>
+          <p>Feel free to reach out for internships, software roles, research conversations, or collaborations.</p>
+        </div>
 
-          <div class="contact-links">
-            <a href="mailto:xfan022@uottawa.ca">xfan022[at]uottawa.ca</a>
-            <a href="#">Ottawa, ON</a>
-            <a href="https://www.linkedin.com/in/ethanxujiafan/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-          </div>
+        <div class="contact-links">
+          <a href="mailto:your.email@example.com" class="contact-link">Email</a>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="contact-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>© 2026 Ethan Xujia Fan</p>
-      <p>Built with HTML, CSS, and JavaScript</p>
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Ethan Fan. Built with HTML, CSS, and JavaScript.</p>
+      <a href="#top">Back to top</a>
     </div>
   </footer>
 
