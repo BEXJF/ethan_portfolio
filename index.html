@@ -36,6 +36,10 @@
 
     <!-- ── HERO ────────────────────────────────────────────── -->
     <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+      </div>
       <div class="container">
         <div class="hero-grid">
 
@@ -53,6 +57,7 @@
             </p>
             <div class="hero-btns reveal">
               <a href="#projects" class="btn-primary">View Projects</a>
+              <a href="#contact" class="btn-outline">Get in Touch</a>
             </div>
             <div class="hero-meta reveal">
               <div class="meta-item">
@@ -94,8 +99,14 @@
         <div class="about-grid">
 
           <div class="card about-bio reveal">
-            <p>I will fill out this part eventually.</p>
+            <p>CS grad turned ML engineer. I'm pursuing an M.Eng in ECE at uOttawa, building agentic AI systems, ML pipelines, and production software — anything that turns research into real outcomes.</p>
+            <p>I thrive at the intersection of systems thinking and deep learning: from low-level QNX RTOS to multi-tenant AI governance platforms.</p>
             <div class="about-tags">
+              <span class="tag">Sim Racing</span>
+              <span class="tag">Aviation (MSFS)</span>
+              <span class="tag">Badminton</span>
+              <span class="tag">Skiing</span>
+              <span class="tag">CUCSA President</span>
             </div>
           </div>
 
@@ -116,17 +127,36 @@
             <div class="card reveal">
               <h3>Skills</h3>
               <div class="skills-list">
-                <div class="skill-row">
+                <div class="skill-group">
                   <span class="skill-cat">Languages</span>
-                  <span class="skill-vals">Python · Java · C · C++ · SQL · React · JS</span>
+                  <div class="skill-chips">
+                    <span class="skill-chip">Python</span>
+                    <span class="skill-chip">Java</span>
+                    <span class="skill-chip">C / C++</span>
+                    <span class="skill-chip">SQL</span>
+                    <span class="skill-chip">React</span>
+                    <span class="skill-chip">JS</span>
+                  </div>
                 </div>
-                <div class="skill-row">
+                <div class="skill-group">
                   <span class="skill-cat">AI / ML</span>
-                  <span class="skill-vals">Deep Learning · RL · Agentic AI · JAX · PyTorch</span>
+                  <div class="skill-chips">
+                    <span class="skill-chip">Deep Learning</span>
+                    <span class="skill-chip">Reinforcement Learning</span>
+                    <span class="skill-chip">Agentic AI</span>
+                    <span class="skill-chip">JAX</span>
+                    <span class="skill-chip">PyTorch</span>
+                  </div>
                 </div>
-                <div class="skill-row">
+                <div class="skill-group">
                   <span class="skill-cat">Tools</span>
-                  <span class="skill-vals">Git · Linux · QNX RTOS · JIRA · TestRail</span>
+                  <div class="skill-chips">
+                    <span class="skill-chip">Git</span>
+                    <span class="skill-chip">Linux</span>
+                    <span class="skill-chip">QNX RTOS</span>
+                    <span class="skill-chip">JIRA</span>
+                    <span class="skill-chip">TestRail</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -288,7 +318,7 @@
         <h2 class="section-title reveal">Coursework at uOttawa.</h2>
         <p class="section-desc reveal">
           Ottawa-Carleton Institute of Electrical and Computer Engineering.
-          Each course links to related work on GitHub repos will be added as coursework is completed.
+          Repos linked as coursework is completed.
         </p>
         <div class="cards-grid">
 
@@ -299,13 +329,11 @@
             </div>
             <h3>Industry Project — Kinaxis</h3>
             <p>
-              Worked with a team to design and prototype a multi-tenant AI governance platform with secure tenant isolation, policy-based authorization, governed model routing, auditability, and role-aware values cascading.
+              Designed and prototyped a multi-tenant AI governance platform with secure tenant
+              isolation, policy-based authorization, governed model routing, and role-aware cascading.
             </p>
             <span class="card-link course-link">View on GitHub →</span>
           </a>
-
-
-
 
           <a href="https://github.com/BEXJF/ELG-5214-CSI-5340-Intro-to-DL-RL" class="card course-card reveal">
             <div class="course-header">
@@ -355,10 +383,10 @@
       <div class="container">
         <div class="contact-block reveal">
           <div class="section-tag">Contact</div>
-          <h2 class="section-title">Let's connect.</h2>
+          <h2 class="section-title">Let's work together.</h2>
           <p class="contact-desc">
-            I'm looking for software engineering and AI co-op opportunities where I can
-            keep building real-world experience. Reach out by email or connect below.
+            Looking for software engineering and AI co-op opportunities.
+            Reach out by email or connect below.
           </p>
           <div class="contact-btns">
             <a href="mailto:xfan022@uottawa.ca" class="btn-primary">Email Me</a>
