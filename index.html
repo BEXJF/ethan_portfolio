@@ -22,7 +22,10 @@
         <a href="#courses">Courses</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="Ethan_Xujia_Fan_Resume..pdf" class="nav-cta" download>Resume ↓</a>
+      <div class="nav-search" id="navSearch">
+        <input type="text" class="nav-search-input" id="searchInput" placeholder="Search…" autocomplete="off" aria-label="Search site">
+        <ul class="search-results" id="searchResults" role="listbox"></ul>
+      </div>
       <button class="nav-burger" id="menuToggle" aria-label="Toggle menu">
         <span></span><span></span>
       </button>
@@ -77,7 +80,10 @@
 
         </div>
       </div>
-      <div class="scroll-hint"><span></span></div>
+      <div class="scroll-hint">
+        <span class="scroll-label">Scroll down</span>
+        <span class="scroll-arrow"></span>
+      </div>
     </section>
 
     <!-- ── ABOUT ────────────────────────────────────────────── -->
