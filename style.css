@@ -448,6 +448,13 @@ img  { display: block; max-width: 100%; }
 
 .about-bio p:last-child { margin-bottom: 0; }
 
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
 .about-right {
   display: flex;
   flex-direction: column;
