@@ -1,21 +1,21 @@
 /* ── Design System ─────────────────────────────────────────── */
 :root {
-  --bg:           #F8F8F6;
+  --bg:           #F5F5F2;
   --bg-card:      #FFFFFF;
-  --bg-alt:       #F2F2EF;
-  --text:         #111111;
-  --text-2:       #444444;
-  --muted:        #888888;
-  --border:       #E5E5E2;
-  --accent:       #2563EB;
+  --bg-alt:       #E8E8E4;
+  --text:         #0A0A0A;
+  --text-2:       #2A2A2A;
+  --muted:        #555555;
+  --border:       #C4C4BF;
+  --accent:       #1D4ED8;
   --accent-bg:    #EFF4FF;
-  --green:        #16A34A;
+  --green:        #15803D;
   --radius:       16px;
   --radius-sm:    10px;
   --max-w:        1120px;
   --nav-h:        64px;
-  --shadow:       0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-  --shadow-hover: 0 4px 16px rgba(0,0,0,0.1), 0 16px 48px rgba(0,0,0,0.08);
+  --shadow:       0 1px 4px rgba(0,0,0,0.09), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,0.13), 0 16px 48px rgba(0,0,0,0.10);
 }
 
 /* ── Reset ─────────────────────────────────────────────────── */
@@ -25,7 +25,7 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 17px; }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
