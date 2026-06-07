@@ -3,407 +3,374 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethan Fan | Personal Website</title>
+  <title>Ethan Fan — Software &amp; AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page-bg">
-    <div class="blur blur-1"></div>
-    <div class="blur blur-2"></div>
-    <div class="blur blur-3"></div>
-    <div class="grid-overlay"></div>
-  </div>
 
+  <!-- ── NAVBAR ──────────────────────────────────────────── -->
   <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="logo">Ethan<span>.</span></a>
-
-      <nav class="nav-menu" id="navMenu">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Ethan<span>.</span></a>
+      <nav class="nav-links" id="navMenu">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#beyond">Beyond Code</a>
-        <a href="#journey">Journey</a>
+        <a href="#courses">Courses</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
+      <a href="Ethan_Xujia_Fan_Resume..pdf" class="nav-cta" download>Resume ↓</a>
+      <button class="nav-burger" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
   <main>
-    <section class="hero section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <div class="eyebrow reveal">PERSONAL WEBSITE</div>
-          <h1 class="hero-title reveal">
-            Hi, I’m <span class="gradient-text">Ethan Fan</span><br />
-            Software, AI, and systems   built with ambition.
-          </h1>
-          <p class="hero-description reveal">
-            Master of Engineering student in Electrical and Computer Engineering at the
-            University of Ottawa, with experience in software development, testing,
-            automation, and machine learning. Studying deep learning and reinforcement learning.
-          </p>
 
-          <div class="hero-buttons reveal">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    <!-- ── HERO ────────────────────────────────────────────── -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+
+          <div class="hero-left">
+            <span class="badge reveal">Open to co-op opportunities</span>
+            <h1 class="hero-title reveal">
+              Hi, I'm<br>
+              <span class="accent-text">Ethan Fan.</span>
+            </h1>
+            <p class="hero-role reveal">Agentic AI · Deep Learning · Software Engineering</p>
+            <p class="hero-desc reveal">
+              Master of Engineering in ECE at the University of Ottawa.
+              I build agentic AI systems, machine learning pipelines, and
+              software tools that are reliable, well-tested, and production-ready.
+            </p>
+            <div class="hero-btns reveal">
+              <a href="#projects" class="btn-primary">View Projects</a>
+              <a href="Ethan_Xujia_Fan_Resume_Dev.pdf" class="btn-outline" download>Download CV</a>
+            </div>
+            <div class="hero-meta reveal">
+              <div class="meta-item">
+                <span class="meta-label">Degree</span>
+                <span class="meta-value">M.Eng ECE · uOttawa</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Focus</span>
+                <span class="meta-value">Agentic AI · Deep Learning · RL</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value meta-green">● Open to opportunities</span>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-stats reveal">
-            <div class="stat-card float-card">
-              <h3>M.Eng. @ uOttawa</h3>
-              <p>ECE, co-op stream</p>
-            </div>
-            <div class="stat-card float-card delay-1">
-              <h3>Software + ML</h3>
-              <p>Engineering, testing, AI</p>
-            </div>
-            <div class="stat-card float-card delay-2">
-              <h3>Builder Mindset</h3>
-              <p>Projects with real polish</p>
-            </div>
+          <div class="hero-right reveal">
+            <!--
+              Replace the div below with your photo once you have one:
+              <img src="photo.jpg" alt="Ethan Fan" class="photo">
+            -->
+            <div class="photo-placeholder"><span>EF</span></div>
           </div>
-        </div>
 
-        <div class="hero-visual reveal">
-          <div class="orbital-card">
-            <div class="orbit orbit-1"></div>
-            <div class="orbit orbit-2"></div>
-            <div class="orbit orbit-3"></div>
-
-            <div class="center-card">
-              <div class="mini-badge">Open to opportunities</div>
-              <h3>Software engineer mindset, AI-driven future</h3>
-              <p>
-                I enjoy building clean systems, strong technical foundations,
-                and projects that feel serious, useful, and well-designed.
-              </p>
-            </div>
-
-            <div class="floating-tag tag-1">Python</div>
-            <div class="floating-tag tag-2">C++</div>
-            <div class="floating-tag tag-3">Machine Learning</div>
-            <div class="floating-tag tag-4">Automation</div>
-          </div>
         </div>
       </div>
-
-      <div class="scroll-indicator">
-        <span></span>
-      </div>
+      <div class="scroll-hint"><span></span></div>
     </section>
 
-    <section class="about section" id="about">
+    <!-- ── ABOUT ────────────────────────────────────────────── -->
+    <section class="section bg-alt" id="about">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">ABOUT</span>
-          <h2>Technical depth with a product mindset</h2>
-          <p>
-            I come from a computer science background and am now pursuing a Master of
-            Engineering in Electrical and Computer Engineering. My work sits at the
-            intersection of software development, testing, systems, and machine learning.
-          </p>
-        </div>
-
+        <div class="section-tag reveal">About</div>
+        <h2 class="section-title reveal">Technical depth,<br>product mindset.</h2>
         <div class="about-grid">
-          <div class="about-card reveal">
-            <h3>Education</h3>
+
+          <div class="card about-bio reveal">
+            <h3>Bio</h3>
             <p>
-              <strong>University of Ottawa</strong><br />
-              Master of Electrical and Computer Engineering (Co-op)<br />
-              Jan. 2026 – Dec. 2027
+              CS graduate now pursuing a Master of Engineering in ECE. I focus on
+              agentic AI, deep learning, and reinforcement learning — building systems
+              that are useful, well-tested, and grounded in real engineering practice.
             </p>
-            <p style="margin-top: 12px;">
-              <strong>Carleton University</strong><br />
-              Honours Bachelor of Computer Science<br />
-              Sept. 2020 – Aug. 2025
+            <p>
+              Outside the screen: sim racing (Assetto Corsa, ACC), aviation (MSFS),
+              badminton, skiing at Tremblant, and serving as President of the Carleton
+              University Chinese Students Association (2025).
             </p>
           </div>
 
-          <div class="about-card reveal">
-            <h3>Summary</h3>
-            <p>
-              AI-focused Master student with hands-on experience building ML systems and a strong focus on Deep Learning and Reinforcement Learning. Proficient in Python and ML frameworks, with Skilled in prompt engineering, and agent fine-tuning. Strong interest in applying AI to improve business productivity and decision-making.
-            </p>
+          <div class="about-right">
+            <div class="card reveal">
+              <h3>Education</h3>
+              <div class="edu-item">
+                <div class="edu-school">University of Ottawa</div>
+                <div class="edu-degree">Master of Electrical &amp; Computer Engineering (Co-op)</div>
+                <div class="edu-date">Jan 2026 – Dec 2027</div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-school">Carleton University</div>
+                <div class="edu-degree">Honours B.C.S. with Minor in Mathematics</div>
+                <div class="edu-date">Sept 2020 – Dec 2025</div>
+              </div>
+            </div>
+            <div class="card reveal">
+              <h3>Skills</h3>
+              <div class="skills-list">
+                <div class="skill-row">
+                  <span class="skill-cat">Languages</span>
+                  <span class="skill-vals">Python · Java · C · C++ · SQL · React · JS</span>
+                </div>
+                <div class="skill-row">
+                  <span class="skill-cat">AI / ML</span>
+                  <span class="skill-vals">Deep Learning · RL · Agentic AI (RAG, MCP) · AI Governance · JAX · PyTorch</span>
+                </div>
+                <div class="skill-row">
+                  <span class="skill-cat">Platforms</span>
+                  <span class="skill-vals">Linux · QNX RTOS · Colab · Shell · Momentics IDE</span>
+                </div>
+                <div class="skill-row">
+                  <span class="skill-cat">Tools</span>
+                  <span class="skill-vals">Git · JIRA · TestRail · Agile · Scrum · SDLC</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="about-card reveal">
-            <h3>Relevant Coursework</h3>
-            <p>
-              Master's:
-                Deep Learning & Reinforcement Learning, Uncertainty Evaluation in Machine Learning,
-                Engineering Ethics.
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="skills section" id="skills">
+    <!-- ── EXPERIENCE ───────────────────────────────────────── -->
+    <section class="section" id="experience">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">SKILLS</span>
-          <h2>Technical stack and strengths</h2>
-        </div>
+        <div class="section-tag reveal">Experience</div>
+        <h2 class="section-title reveal">Work &amp; teaching.</h2>
+        <div class="exp-list">
 
-        <div class="skills-grid">
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">01</div>
-            <h3>Programming</h3>
-            <p>Java, Python, C, C++, SQL</p>
+          <div class="card exp-card reveal">
+            <div class="exp-left">
+              <span class="tag tag-industry">Industry</span>
+              <div class="exp-period">Jun – Sept 2024</div>
+            </div>
+            <div class="exp-right">
+              <h3>Test Engineer</h3>
+              <div class="exp-company">Neusoft (Amazon Vendor) · Dalian, China</div>
+              <p>
+                OTA and system-level testing (FSST, MSQ) for Amazon Fire OS TV. Built Python
+                automation pipelines in Linux; used JIRA, TestRail, AWS KATS, and DOTS to manage
+                test cycles and identify bottlenecks. Performed low-level Android testing including
+                bootloader modification. Presented findings to Amazon developers and QA.
+              </p>
+            </div>
           </div>
 
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">02</div>
-            <h3>Platforms</h3>
-            <p>Linux, Shell, Colab, QNX RTOS, Momentics IDE</p>
+          <div class="card exp-card reveal">
+            <div class="exp-left">
+              <span class="tag tag-teaching">Teaching</span>
+              <div class="exp-period">Jan 2026 – Present</div>
+            </div>
+            <div class="exp-right">
+              <h3>Teaching Assistant — Real-Time Operating Systems (CEG4166)</h3>
+              <div class="exp-company">University of Ottawa</div>
+              <p>
+                Labs, grading, and feedback covering concurrency, scheduling,
+                synchronization, and fault-tolerant design on QNX.
+              </p>
+            </div>
           </div>
 
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">03</div>
-            <h3>Testing & Engineering</h3>
-            <p>Git, JIRA, TestRail, Agile, Scrum, SDLC</p>
+          <div class="card exp-card reveal">
+            <div class="exp-left">
+              <span class="tag tag-teaching">Teaching</span>
+              <div class="exp-period">Sept – Dec 2025</div>
+            </div>
+            <div class="exp-right">
+              <h3>Teaching Assistant — Intro to Software Engineering (SEG2105)</h3>
+              <div class="exp-company">University of Ottawa</div>
+              <p>
+                Java, OOP, UML, Android, SQLite, and software testing.
+                Weekly office hours, grading, and coordinating with the instructor and fellow TAs.
+              </p>
+            </div>
           </div>
 
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">04</div>
-            <h3>AI / ML</h3>
-            <p>Deep Learning, Reinforcement Learning, model evaluation, data science</p>
+          <div class="card exp-card reveal">
+            <div class="exp-left">
+              <span class="tag tag-teaching">Teaching</span>
+              <div class="exp-period">2021 · 2023</div>
+            </div>
+            <div class="exp-right">
+              <h3>Teaching Assistant — Discrete Structures I (COMP1805)</h3>
+              <div class="exp-company">Carleton University</div>
+              <p>
+                Logic, set theory, algorithm complexity, proof, and graph theory.
+                Graded 600+ assignments and exams; weekly office hours.
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="projects section" id="experience">
+    <!-- ── PROJECTS ─────────────────────────────────────────── -->
+    <section class="section bg-alt" id="projects">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">EXPERIENCE</span>
-          <h2>Work and teaching</h2>
-        </div>
+        <div class="section-tag reveal">Projects</div>
+        <h2 class="section-title reveal">Selected work.</h2>
+        <p class="section-desc reveal">Technical projects in ML, systems, and software engineering.</p>
+        <div class="cards-grid">
 
-        <div class="projects-grid">
-          <article class="project-card reveal project-pop">
-            <div class="project-top">
-              <span class="project-tag">Industry</span>
-              <h3>Test Engineer — Neusoft</h3>
-            </div>
+          <article class="card proj-card reveal">
+            <span class="tag tag-ml">Agentic AI · Sponsored by Kinaxis</span>
+            <h3>Enterprise Agentic AI Governance Platform</h3>
             <p>
-              Worked on Fire OS testing with Python, Linux scripts, JIRA, TestRail,
-              AWS STAF, AWS KATS, and DOTS. Contributed to OTA, FSST, and MSQ testing,
-              debugged low-level Android upgrade issues, and helped improve pre-release stability.
+              Multi-tenant AI agent platform with policy enforcement, model routing,
+              tenant isolation, and audit logging — built for enterprise-scale governance.
             </p>
+            <div class="card-footer">
+              <a href="#" class="card-link">View on GitHub →</a>
+            </div>
           </article>
 
-          <article class="project-card reveal project-pop">
-            <div class="project-top">
-              <span class="project-tag">Teaching</span>
-              <h3>TA — Real-time Operating Systems</h3>
-            </div>
+          <article class="card proj-card reveal">
+            <span class="tag tag-ml">ML Systems</span>
+            <h3>Neural Network Analysis — JAX vs PyTorch</h3>
             <p>
-              Support labs, grading, and feedback for RTOS topics including concurrency,
-              scheduling, synchronization, reliability, and fault-tolerant system design.
+              Built and benchmarked JAX (grad, jit) and PyTorch networks on MNIST.
+              Analyzed scalability, calibration, and model robustness across execution paradigms.
             </p>
+            <div class="card-footer">
+              <a href="#" class="card-link">View on GitHub →</a>
+            </div>
           </article>
 
-          <article class="project-card reveal project-pop">
-            <div class="project-top">
-              <span class="project-tag">Teaching</span>
-              <h3>TA — Software Engineering & Discrete Structures</h3>
-            </div>
+          <article class="card proj-card reveal">
+            <span class="tag tag-rl">Reinforcement Learning</span>
+            <h3>Stock Trading RL Agent</h3>
             <p>
-              Supported Java, OOP, UML, Android, SQLite, software testing, logic,
-              proof, graph theory, and large-scale grading with detailed feedback
-              and weekly office hours.
+              Trading agent using A2C, A3C, DQN, and PPO in AnyTrading; DQN identified as
+              best performer. Co-authored a 9-page NeurIPS-style research paper.
             </p>
+            <div class="card-footer">
+              <a href="#" class="card-link">View on GitHub →</a>
+            </div>
           </article>
+
+          <article class="card proj-card reveal">
+            <span class="tag tag-sys">C++ / Systems</span>
+            <h3>Simulated AED Software</h3>
+            <p>
+              AED simulation in C++ (Qt/Linux) — self-test, rhythm analysis, shock delivery,
+              and post-shock monitoring. Full SDLC with UML artifacts and layered testing.
+            </p>
+            <div class="card-footer">
+              <a href="#" class="card-link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="card proj-card reveal">
+            <span class="tag tag-data">Security</span>
+            <h3>Computer &amp; Internet Security Study</h3>
+            <p>
+              Survey of cryptography (RSA, TLS, Diffie-Hellman), software vulnerabilities,
+              real-world attacks, and privacy technologies including Tor, VPNs, and GDPR.
+            </p>
+            <div class="card-footer">
+              <a href="#" class="card-link">View on GitHub →</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section class="projects section" id="projects">
+    <!-- ── COURSES ──────────────────────────────────────────── -->
+    <section class="section" id="courses">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">PROJECTS</span>
-          <h2>Selected technical work</h2>
-          <p>Projects that reflect both software and machine learning interests.</p>
-        </div>
+        <div class="section-tag reveal">Courses</div>
+        <h2 class="section-title reveal">Coursework at uOttawa.</h2>
+        <p class="section-desc reveal">
+          Master of Engineering in ECE. Each course links to related work on GitHub —
+          repos will be added as coursework is completed.
+        </p>
+        <div class="cards-grid">
 
-        <div class="projects-grid">
-          <article class="project-card reveal project-pop">
-            <div class="project-top">
-              <span class="project-tag">ML Systems</span>
-              <h3>Neural Network Performance Analysis</h3>
+          <a href="#" class="card course-card reveal">
+            <div class="course-header">
+              <span class="course-code">Graduate</span>
+              <span class="course-term">Winter 2026</span>
             </div>
+            <h3>Deep Learning &amp; Reinforcement Learning</h3>
             <p>
-              Built a feedforward neural network in pure JAX using grad and jit, trained
-              it on MNIST, and compared it against an equivalent PyTorch implementation
-              through batch-size and timing analysis.
+              Neural architectures, backpropagation, CNNs, RNNs, policy gradients,
+              Q-learning, and actor-critic methods.
             </p>
-            <div class="project-links">
-              <a href="#">Details</a>
-              <a href="#">GitHub</a>
-            </div>
-          </article>
+            <span class="card-link course-link">View on GitHub →</span>
+          </a>
 
-          <article class="project-card reveal project-pop">
-            <div class="project-top">
-              <span class="project-tag">Reinforcement Learning</span>
-              <h3>Stock Trading RL Agent</h3>
+          <a href="#" class="card course-card reveal">
+            <div class="course-header">
+              <span class="course-code">Graduate</span>
+              <span class="course-term">Winter 2026</span>
             </div>
+            <h3>Uncertainty Evaluation in Machine Learning</h3>
             <p>
-              Developed a trading agent using A2C, A3C, DQN, and PPO in the AnyTrading
-              environment, explored exploration strategies, and identified DQN as the
-              strongest performer.
+              Probabilistic models, Bayesian methods, calibration, conformal prediction,
+              and uncertainty quantification for ML systems.
             </p>
-            <div class="project-links">
-              <a href="#">Details</a>
-              <a href="#">GitHub</a>
-            </div>
-          </article>
+            <span class="card-link course-link">View on GitHub →</span>
+          </a>
 
-          <article class="project-card reveal project-pop">
-            <div class="project-top">
-              <span class="project-tag">C++ / Systems</span>
-              <h3>Simulated AED Software</h3>
+          <a href="#" class="card course-card reveal">
+            <div class="course-header">
+              <span class="course-code">Graduate</span>
+              <span class="course-term">Winter 2026</span>
             </div>
+            <h3>Engineering Ethics</h3>
             <p>
-              Designed a simulated automated external defibrillator in C++ on Qt/Linux,
-              including self-test logic, rhythm analysis, shock delivery, monitoring,
-              UML artifacts, and layered testing.
+              Professional responsibilities, ethical frameworks in technology,
+              case studies in AI governance, and engineering decision-making.
             </p>
-            <div class="project-links">
-              <a href="#">Details</a>
-              <a href="#">GitHub</a>
-            </div>
-          </article>
+            <span class="card-link course-link">View on GitHub →</span>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <section class="skills section" id="beyond">
+    <!-- ── CONTACT ──────────────────────────────────────────── -->
+    <section class="section bg-alt" id="contact">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">BEYOND CODE</span>
-          <h2>What drives me outside the screen</h2>
-          <p>
-            Technical work is a big part of who I am, but not the whole story.
-            These interests shape how I think, compete, and lead.
+        <div class="contact-block reveal">
+          <div class="section-tag">Contact</div>
+          <h2 class="section-title">Let's connect.</h2>
+          <p class="contact-desc">
+            I'm looking for software engineering and AI co-op opportunities where I can
+            keep building real-world experience. Reach out by email or connect below.
           </p>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">01</div>
-            <h3>Sim Racing</h3>
-            <p>
-              Asseto Corsa, Asseto Corsa Competizione, RaceRoom.
-            </p>
-          </div>
-
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">02</div>
-            <h3>Aviation</h3>
-            <p>
-              Microsoft Flight Simulator.
-            </p>
-          </div>
-
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">03</div>
-            <h3>Badminton & Skiing</h3>
-            <p>
-              Tremblant, Cascades, Camp Fortune.
-            </p>
-          </div>
-
-          <div class="skill-box reveal tilt-card">
-            <div class="skill-icon">04</div>
-            <h3>Leadership</h3>
-            <p>
-              President of the Carleton University Chinese Student Association (2025).
-            </p>
+          <div class="contact-btns">
+            <a href="mailto:xfan022@uottawa.ca" class="btn-primary">Email Me</a>
+            <a href="https://www.linkedin.com/in/ethanxujiafan/" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
+            <a href="https://github.com/BEXJF" target="_blank" rel="noopener" class="btn-outline">GitHub</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="journey section" id="journey">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">JOURNEY</span>
-          <h2>My path so far</h2>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">Foundation</span>
-              <h3>Computer Science Background</h3>
-              <p>
-                Built a strong base in programming, software engineering, and technical problem solving.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">Growth</span>
-              <h3>Engineering, Testing, and AI</h3>
-              <p>
-                Expanded into system-level testing, automation, machine learning,
-                and more advanced technical project work.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-year">Next</span>
-              <h3>Industry-ready Software / AI Engineer</h3>
-              <p>
-                Working toward building reliable, intelligent, and polished systems
-                that combine technical depth with real-world usefulness.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section" id="contact">
-      <div class="container">
-        <div class="contact-card reveal">
-          <span class="section-label">CONTACT</span>
-          <h2>Let’s connect</h2>
-          <p>
-            I’m interested in software engineering, AI, systems, and technical opportunities
-            where I can keep building strong real-world experience.
-          </p>
-          <div class="contact-actions">
-            <a href="mailto:xfan022@uottawa.ca" class="btn btn-primary">Email Me</a>
-            <a href="https://www.linkedin.com/in/ethanxujiafan/" target="_blank" class="btn btn-secondary">LinkedIn</a>
-            <a href="https://bexjf.github.io/ethan_portfolio/" target="_blank" class="btn btn-secondary">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    ↑
-  </button>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Ethan Xujia Fan</span>
+      <span>Built from scratch.</span>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
 </body>

@@ -1,110 +1,63 @@
-const navbar = document.getElementById("navbar");
+const navbar     = document.getElementById("navbar");
 const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
-const backToTop = document.getElementById("backToTop");
-const revealElements = document.querySelectorAll(".reveal");
-const tiltCards = document.querySelectorAll(".tilt-card");
+const navMenu    = document.getElementById("navMenu");
+const backToTop  = document.getElementById("backToTop");
+const revealEls  = document.querySelectorAll(".reveal");
 
-// navbar scroll effect
+// ── Navbar + back-to-top on scroll ──────────────────────────
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 20) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-
-  if (window.scrollY > 500) {
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
-  }
+  navbar.classList.toggle("scrolled", window.scrollY > 20);
+  backToTop.classList.toggle("show", window.scrollY > 500);
 });
 
-// mobile menu
+// ── Mobile menu ──────────────────────────────────────────────
 menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("open");
 });
 
-document.querySelectorAll(".nav-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("open");
-  });
+navMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => navMenu.classList.remove("open"));
 });
 
-// reveal on scroll
+// ── Scroll reveal ────────────────────────────────────────────
 const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add("active");
-        }, index * 80);
+        setTimeout(() => entry.target.classList.add("active"), i * 60);
       }
     });
   },
-  {
-    threshold: 0.15
-  }
+  { threshold: 0.12 }
 );
 
-revealElements.forEach(el => revealObserver.observe(el));
+revealEls.forEach(el => revealObserver.observe(el));
 
-// back to top
+// ── Back to top ──────────────────────────────────────────────
 backToTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// subtle tilt effect
-tiltCards.forEach(card => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+// ── Active nav link on scroll ────────────────────────────────
+const sections = document.querySelectorAll("section[id]");
+const navLinks  = document.querySelectorAll(".nav-links a");
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+        });
+      }
+    });
+  },
+  { rootMargin: "-40% 0px -55% 0px" }
+);
 
-    const rotateX = ((y - centerY) / centerY) * -6;
-    const rotateY = ((x - centerX) / centerX) * 6;
+sections.forEach(s => sectionObserver.observe(s));
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
-  });
-});
-
-// active nav highlight on scroll
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-menu a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 140;
-    const sectionHeight = section.offsetHeight;
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.style.color = "";
-    if (link.getAttribute("href") === `#${current}`) {
-      link.style.color = "#121826";
-      link.style.fontWeight = "700";
-    } else {
-      link.style.fontWeight = "500";
-    }
-  });
-});
-
-// hero text entrance
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
+// ── Footer year ───────────────────────────────────────────────
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
