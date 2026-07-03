@@ -4,10 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ethan Fan — Software &amp; AI Engineer</title>
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme.css" />
 </head>
 <body>
 
@@ -26,6 +34,9 @@
         <input type="text" class="nav-search-input" id="searchInput" placeholder="Search…" autocomplete="off" aria-label="Search site">
         <ul class="search-results" id="searchResults" role="listbox"></ul>
       </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Toggle light/dark mode">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      </button>
       <button class="nav-burger" id="menuToggle" aria-label="Toggle menu">
         <span></span><span></span>
       </button>
@@ -315,12 +326,25 @@
     <section class="section" id="courses">
       <div class="container">
         <div class="section-tag reveal">Courses</div>
-        <h2 class="section-title reveal">Coursework at uOttawa.</h2>
+        <h2 class="section-title reveal">Coursework &amp; certificates.</h2>
         <p class="section-desc reveal">
-          Ottawa-Carleton Institute of Electrical and Computer Engineering.
-          Repos linked as coursework is completed.
+          Graduate coursework, applied AI projects, and continuing-learning certificates.
+          Repos and certificates are linked as they are completed.
         </p>
         <div class="cards-grid">
+
+          <a href="#" class="card course-card reveal">
+            <div class="course-header">
+              <span class="course-code">Coursera</span>
+              <span class="course-term">2026</span>
+            </div>
+            <h3>Coursera Certificate</h3>
+            <p>
+              Recently completed online coursework through Coursera to strengthen practical AI,
+              machine learning, and software engineering skills beyond formal graduate study.
+            </p>
+            <span class="card-link course-link">Certificate link coming soon →</span>
+          </a>
 
           <a href="https://www.kinaxis.com/en" class="card course-card reveal">
             <div class="course-header">
