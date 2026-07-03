@@ -3,6 +3,27 @@ const menuToggle = document.getElementById("menuToggle");
 const navMenu    = document.getElementById("navMenu");
 const backToTop  = document.getElementById("backToTop");
 const revealEls  = document.querySelectorAll(".reveal");
+const themeToggle = document.getElementById("themeToggle");
+
+// ── Light / dark mode ────────────────────────────────────────
+function setTheme(theme) {
+  const nextTheme = theme === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = nextTheme;
+  localStorage.setItem("theme", nextTheme);
+
+  if (themeToggle) {
+    const isDark = nextTheme === "dark";
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+    themeToggle.querySelector(".theme-toggle-icon").textContent = isDark ? "☀" : "☾";
+  }
+}
+
+setTheme(document.documentElement.dataset.theme || "light");
+
+themeToggle?.addEventListener("click", () => {
+  const currentTheme = document.documentElement.dataset.theme;
+  setTheme(currentTheme === "dark" ? "light" : "dark");
+});
 
 // ── Navbar + back-to-top on scroll ──────────────────────────
 window.addEventListener("scroll", () => {
@@ -70,7 +91,7 @@ const searchIndex = [
   { title: "About",      sub: "Bio, Education, Skills",          href: "#about"      },
   { title: "Experience", sub: "Work & Teaching history",         href: "#experience" },
   { title: "Projects",   sub: "ML, systems, software projects",  href: "#projects"   },
-  { title: "Courses",    sub: "Graduate coursework at uOttawa",  href: "#courses"    },
+  { title: "Courses",    sub: "Graduate coursework and certificates", href: "#courses"    },
   { title: "Contact",    sub: "Email, LinkedIn, GitHub",         href: "#contact"    },
   ...Array.from(document.querySelectorAll(".proj-card h3")).map(el => ({
     title: el.textContent.trim(), sub: "Project", href: "#projects"
@@ -79,7 +100,7 @@ const searchIndex = [
     title: el.textContent.trim(), sub: "Experience", href: "#experience"
   })),
   ...Array.from(document.querySelectorAll(".course-card h3")).map(el => ({
-    title: el.textContent.trim(), sub: "Course", href: "#courses"
+    title: el.textContent.trim(), sub: "Course / Certificate", href: "#courses"
   })),
 ];
 
