@@ -37,6 +37,7 @@
       <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Toggle light/dark mode">
         <span class="theme-toggle-icon" aria-hidden="true">☾</span>
       </button>
+      <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to Chinese">中文</button>
       <button class="nav-burger" id="menuToggle" aria-label="Toggle menu">
         <span></span><span></span>
       </button>
@@ -69,6 +70,7 @@
             <div class="hero-btns reveal">
               <a href="#projects" class="btn-primary">View Projects</a>
               <a href="#contact" class="btn-outline">Get in Touch</a>
+              <button type="button" class="btn-outline" id="anonymousNoteBtn">Leave an Anonymous Note</button>
             </div>
             <div class="hero-meta reveal">
               <div class="meta-item">
@@ -431,6 +433,51 @@
   </footer>
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <div class="note-modal" id="anonymousNoteModal" aria-hidden="true">
+    <div class="note-modal-backdrop" data-note-close></div>
+    <section class="note-dialog" role="dialog" aria-modal="true" aria-labelledby="anonymousNoteTitle">
+      <button type="button" class="note-close" aria-label="Close anonymous note form" data-note-close>&times;</button>
+      <div class="section-tag">Message</div>
+      <h2 class="note-title" id="anonymousNoteTitle">Leave an anonymous note.</h2>
+      <p class="note-copy">
+        Your name and email are not requested. This form will include transparent technical details
+        such as time, page, browser, language, timezone, screen size, and IP if available.
+      </p>
+      <form
+        class="note-form"
+        id="anonymousNoteForm"
+        action="https://formsubmit.co/xfan022@uottawa.ca"
+        method="POST"
+        target="anonymousNoteFrame"
+      >
+        <input type="hidden" name="_subject" value="Anonymous note from portfolio">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="Submitted at" id="noteSubmittedAt">
+        <input type="hidden" name="Page URL" id="notePageUrl">
+        <input type="hidden" name="Referrer" id="noteReferrer">
+        <input type="hidden" name="Browser metadata" id="noteBrowserMeta">
+        <input type="hidden" name="Network IP" id="noteNetworkIp">
+        <label class="note-label" for="anonymousMessage">Message</label>
+        <textarea
+          class="note-textarea"
+          id="anonymousMessage"
+          name="Message"
+          rows="6"
+          maxlength="1200"
+          placeholder="Write your message..."
+          required
+        ></textarea>
+        <div class="note-actions">
+          <button type="submit" class="btn-primary" id="anonymousNoteSubmit">Send Note</button>
+          <button type="button" class="btn-outline" data-note-close>Cancel</button>
+        </div>
+        <p class="note-status" id="anonymousNoteStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </div>
+  <iframe class="note-frame" name="anonymousNoteFrame" title="Anonymous note submission"></iframe>
 
   <script src="script.js"></script>
 </body>
