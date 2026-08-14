@@ -92,7 +92,7 @@ const translations = {
       ".exp-card:nth-child(6) .tag": "Industry",
       ".exp-card:nth-child(6) .exp-period": "Summer 2026",
       ".exp-card:nth-child(6) h3": "Industrial AI Engineering Intern",
-      ".exp-card:nth-child(6) .exp-company": "Hebei Weixin Electronics Co., Ltd. (河北为信电子) · China",
+      ".exp-card:nth-child(6) .exp-company": "Hebei Weixin Electronics Co., Ltd. · China",
       ".exp-card:nth-child(6) p": "Worked within an existing DAS fiber-optic vibration classification system, focusing on data augmentation, independent testing, cross-validation, and ONNX inference.",
       "#projects .section-tag": "Projects",
       "#projects .section-title": "Selected work.",
