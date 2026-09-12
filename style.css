@@ -459,39 +459,39 @@ img  { display: block; max-width: 100%; }
   justify-content: center;
 }
 
-/* Photo placeholder */
-.photo-placeholder {
+/* Hero portrait on a quiet Nokia-blue wash */
+.hero-photo {
+  --nokia-blue: #0149a5;
+  --nokia-deep: #002056;
+  position: relative;
   width: 260px;
   height: 320px;
+  margin: 0;
   border-radius: 24px;
-  background: linear-gradient(135deg, #DBEAFE, #EDE9FE, #C7D2FE, #DBEAFE);
-  background-size: 300% 300%;
-  animation: gradientShift 6s ease infinite;
-  border: 1px solid rgba(124,58,237,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: rgba(29, 78, 216, 0.35);
-  box-shadow: var(--shadow), 0 0 60px rgba(124,58,237,0.1);
+  overflow: hidden;
+  background: linear-gradient(165deg, #125eb8 0%, var(--nokia-blue) 42%, var(--nokia-deep) 100%);
+  border: 1px solid rgba(1, 73, 165, 0.28);
+  box-shadow: var(--shadow), 0 0 56px rgba(1, 73, 165, 0.18);
+}
+
+.hero-photo-logo {
+  position: absolute;
+  left: 4%;
+  top: 11%;
+  width: 92%;
+  height: auto;
+  opacity: 0.18;
+  pointer-events: none;
   user-select: none;
 }
 
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 .photo {
-  width: 260px;
-  height: 320px;
-  border-radius: 24px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  object-position: center 12%;
 }
 
 .scroll-hint {
@@ -1058,11 +1058,9 @@ body.modal-open {
 
   .hero-right { order: -1; }
 
-  .photo-placeholder,
-  .photo {
+  .hero-photo {
     width: 160px;
     height: 200px;
-    font-size: 2rem;
   }
 
   .hero-title {
@@ -1180,11 +1178,13 @@ html[data-theme="dark"] .navbar {
   border-color: var(--accent);
 }
 
-html[data-theme="dark"] .photo-placeholder {
-  background: linear-gradient(135deg, #172554, #312E81, #1E1B4B, #0F172A);
-  border-color: rgba(167,139,250,0.28);
-  color: rgba(191, 219, 254, 0.55);
-  box-shadow: var(--shadow), 0 0 70px rgba(96,165,250,0.12);
+html[data-theme="dark"] .hero-photo {
+  border-color: rgba(96, 165, 250, 0.28);
+  box-shadow: var(--shadow), 0 0 70px rgba(1, 73, 165, 0.28);
+}
+
+html[data-theme="dark"] .hero-photo-logo {
+  opacity: 0.22;
 }
 
 html[data-theme="dark"] .hero-blob-1 {
