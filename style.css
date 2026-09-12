@@ -476,11 +476,11 @@ img  { display: block; max-width: 100%; }
 
 .hero-photo-logo {
   position: absolute;
-  left: 4%;
-  top: 11%;
-  width: 92%;
+  left: 6%;
+  top: 6%;
+  width: 88%;
   height: auto;
-  opacity: 0.18;
+  opacity: 0.28;
   pointer-events: none;
   user-select: none;
 }
@@ -1184,7 +1184,7 @@ html[data-theme="dark"] .hero-photo {
 }
 
 html[data-theme="dark"] .hero-photo-logo {
-  opacity: 0.22;
+  opacity: 0.32;
 }
 
 html[data-theme="dark"] .hero-blob-1 {
